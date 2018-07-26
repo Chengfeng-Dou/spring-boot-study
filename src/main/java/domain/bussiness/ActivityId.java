@@ -1,4 +1,4 @@
-package entity;
+package domain.bussiness;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

@@ -1,8 +1,8 @@
-package controllers;
+package controller;
 
-import entity.Activity;
-import entity.ActivityAndSignUpService;
-import entity.Participant;
+import domain.bussiness.Activity;
+import service.ActivityAndSignUpService;
+import domain.bussiness.Participant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,13 +23,13 @@ public class TestController {
         this.activityAndSignUpService = activityAndSignUpService;
     }
 
-    @RequestMapping("/activity/show")
+    @RequestMapping("/show")
     @ResponseBody
     public Activity getActivityInfo(){
         return activityAndSignUpService.findActivityByName("测试活动");
     }
 
-    @RequestMapping("/participant/saveAndShow")
+    @RequestMapping("/saveAndShow")
     @ResponseBody
     public List<Participant> saveAndShow(){
 

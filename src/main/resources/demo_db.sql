@@ -25,3 +25,22 @@ insert into activity value (
   'http://localhost/helloworld',
   'http://localhost/sdfasdf'
 );
+
+create table sys_user(
+  uid int(11) auto_increment key ,
+  user_name varchar(100) not null primary key,
+  password varchar(100) not null
+);
+
+insert into sys_user(user_name, password) values ('tlosp', 'you_guess');
+
+create table sys_role(
+  uid int(11),
+  user_role enum('MY_ROLE_ADMIN', 'MY_ROLE_USER'),
+  primary key (uid, user_role),
+  foreign key user_role_id_key (uid) references sys_user(uid)
+);
+
+insert into sys_role values (1, 'ROLE_ADMIN');
+insert into sys_role values (1, 'ROLE_USER');
+

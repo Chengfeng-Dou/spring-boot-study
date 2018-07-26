@@ -19,7 +19,16 @@ public class MyInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        System.out.println(response.toString());
+        if(modelAndView == null){
+            System.out.println("model and view is null");
+        }
+        if(handler == null){
+            System.out.println("handler is null");
+        }
+
+        for(String headerName: response.getHeaderNames()){
+            System.out.println(headerName);
+        }
         super.postHandle(request, response, handler, modelAndView);
     }
 }

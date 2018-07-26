@@ -1,5 +1,8 @@
-package entity;
+package service;
 
+
+import domain.bussiness.Activity;
+import domain.bussiness.Participant;
 
 import java.util.List;
 

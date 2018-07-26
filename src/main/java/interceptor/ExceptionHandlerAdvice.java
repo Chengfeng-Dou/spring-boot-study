@@ -11,9 +11,10 @@ public class ExceptionHandlerAdvice {
 
     @ExceptionHandler(value = Exception.class)
     public ModelAndView exception(Exception e, WebRequest request){
+        System.out.println("get exception");
         ModelAndView modelAndView = new ModelAndView("error");
-        modelAndView.addObject("errorMsg", e.toString());
-
+        modelAndView.addObject("errorMsg", e.getMessage());
+        e.printStackTrace();
         return modelAndView;
     }
 }
